@@ -1,0 +1,80 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  background: #111118;
+  color: #CDD6F4;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Number input spin buttons — subtle so they don't dominate the panel */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 0.4;
+}
+
+/* Consistent thin scrollbars across all panels */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #313244;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #45475A;
+}
+
+/* Range slider track styling — works in most browsers */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 3px;
+  background: #313244;
+  border-radius: 2px;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #89B4FA;
+  cursor: pointer;
+  border: none;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #89B4FA;
+  cursor: pointer;
+  border: none;
+}
+
+/* Focus ring — visible for keyboard accessibility */
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #89B4FA;
+  outline-offset: 1px;
+}
+
+/* Prevent default focus ring on canvas (engine manages its own interaction) */
+canvas:focus {
+  outline: none;
+}
